@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+#wppda_alert {
+	display: block;
+	padding: 10px;
+	margin: 10px 0px;
+	border-radius: 5px;
+	color: #f00;
+	background: rgba( 255, 249, 255, 0.4 );
+	border: 1px solid rgba( 255, 0, 0, 0.5 );
+}

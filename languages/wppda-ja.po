@@ -1,0 +1,112 @@
+# WordPress Blank Pot
+# Copyright (C) 2014 ...
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Posts Date Alert\n"
+"Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
+"POT-Creation-Date: 2016-01-26 15:39+0900\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Tsuyoshi.\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Textdomain-Support: yesX-Generator: Poedit 1.6.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
+"_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,"
+"_nc:4c,1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 2.0.3\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: wp-posts-date-alert.php:176
+msgid "Settings saved"
+msgstr "設定を保存しました。"
+
+#: wp-posts-date-alert.php:188
+msgid "Old Post"
+msgstr "古い記事"
+
+#: wp-posts-date-alert.php:213
+msgid "I display a warning sentence for an old post"
+msgstr "古い記事に警告文を表示する"
+
+#: wp-posts-date-alert.php:254
+msgid "Period"
+msgstr "期間"
+
+#: wp-posts-date-alert.php:258 wp-posts-date-alert.php:260
+msgid "Year or Day"
+msgstr "年日"
+
+#: wp-posts-date-alert.php:262
+msgid "Year"
+msgstr "年以上"
+
+#: wp-posts-date-alert.php:263
+msgid "Day"
+msgstr "日以上"
+
+#: wp-posts-date-alert.php:269 wp-posts-date-alert.php:270
+msgid "Message"
+msgstr "メッセージ"
+
+#: wp-posts-date-alert.php:271
+msgid "Please input the message which you want to display possible HTML"
+msgstr "表示したいメッセージを入力してください (HTML可)。"
+
+#: wp-posts-date-alert.php:278 wp-posts-date-alert.php:280
+msgid "Output"
+msgstr "出力"
+
+#: wp-posts-date-alert.php:282
+msgid "Before a body"
+msgstr "本文の前"
+
+#: wp-posts-date-alert.php:283
+msgid "After a body"
+msgstr "本文の後"
+
+#: wp-posts-date-alert.php:284
+msgid ""
+"I use template tag <code>&lt;?php if ( function_exists( 'wppda_alert' ) ) "
+"wppda_alert(); ?&gt;</code> without outputting it automatically"
+msgstr ""
+"自動出力せずテンプレートタグ <code>&lt;?php if "
+"( function_exists( 'wppda_alert' ) ) wppda_alert(); ?&gt;</code> を使用す"
+"る"
+
+#: wp-posts-date-alert.php:290 wp-posts-date-alert.php:292
+msgid "Option"
+msgstr "オプション"
+
+#: wp-posts-date-alert.php:295
+msgid "I use the CSS attached to the plug in"
+msgstr "プラグイン付属のCSSを使う"
+
+#: wp-posts-date-alert.php:298
+msgid "Enclose with a"
+msgstr "divで括る"
+
+msgid "Comparison"
+msgstr "比較"
+
+msgid "Published on"
+msgstr "公開日時"
+
+msgid "Last updated"
+msgstr "最終更新日時"
+
+#~ msgid "Year Date"
+#~ msgstr "年日"
+
+#~ msgid "More than one year"
+#~ msgstr "年以上"
+
+#~ msgid "More than one day"
+#~ msgstr "日以上"
