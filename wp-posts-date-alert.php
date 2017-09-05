@@ -2,7 +2,7 @@
 /*
 Plugin Name: WP Posts Date Alert
 Plugin URI: http://webcake.no003.info/
-Description: 投稿の公開日と現在の日付を比較してメッセージを表示するプラグインです。
+Description: 投稿の公開日時または最終更新日時と現在の日付を比較してメッセージを表示するプラグインです。
 Author: Tsuyoshi.
 Version: 2.3.0
 Author URI: http://webcake.no003.info/
