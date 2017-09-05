@@ -204,9 +204,9 @@ class PostsDateAlert
 			update_option( self::n( 'alert' ), wp_unslash( $_POST[ self::n( 'alert' ) ] ) );
 			update_option( self::n( 'use_type' ), $_POST[ self::n( 'use_type' ) ] );
 			update_option( self::n( 'comparison' ), $_POST[ self::n( 'comparison' ) ] );
-			update_option( self::n( 'use_css' ), $_POST[ self::n( 'use_css' ) ] );
 			update_option( self::n( 'alert_position' ), $_POST[ self::n( 'alert_position' ) ] );
-			update_option( self::n( 'use_wrapper' ), $_POST[ self::n( 'use_wrapper' ) ] );
+			update_option( self::n( 'use_css' ), $this->get_checkbox( 'use_css' ) );
+			update_option( self::n( 'use_wrapper' ), $this->get_checkbox( 'use_wrapper' ) );
 
 			// 画面に更新されたことを伝えるメッセージを表示
 			echo '<div class="updated"><p><strong>' . __( 'Settings saved', self::PREFIX ) . '</strong></p></div>';
@@ -214,6 +214,12 @@ class PostsDateAlert
 
 		// フォームの表示
 		$this->the_form();
+	}
+
+	private function get_checkbox($name)
+	{
+		$value = isset( $_POST[ $name ] ) ? $_POST[ $name ] : null;
+		return $value;
 	}
 
 	/**
@@ -253,7 +259,7 @@ class PostsDateAlert
 	/**
 	 *	独自メタボックスの入力値を保存
 	 */
-	function save_postmeta( $post_id ) {
+	public function save_postmeta( $post_id ) {
 		// 生成した一時トークンの取得
 		$nonce_field = isset( $_POST[ self::n( 'meta_nonce' ) ] ) ? $_POST[ self::n( 'meta_nonce' ) ] : null;
 
