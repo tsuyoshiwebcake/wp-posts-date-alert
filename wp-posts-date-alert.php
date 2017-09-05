@@ -4,7 +4,7 @@ Plugin Name: WP Posts Date Alert
 Plugin URI: http://webcake.no003.info/
 Description: 投稿の公開日と現在の日付を比較してメッセージを表示するプラグインです。
 Author: Tsuyoshi.
-Version: 2.2.0
+Version: 2.3.0
 Author URI: http://webcake.no003.info/
 License: GPL
 Copyright: Tsuyoshi.
@@ -205,8 +205,8 @@ class PostsDateAlert
 			update_option( self::n( 'use_type' ), $_POST[ self::n( 'use_type' ) ] );
 			update_option( self::n( 'comparison' ), $_POST[ self::n( 'comparison' ) ] );
 			update_option( self::n( 'alert_position' ), $_POST[ self::n( 'alert_position' ) ] );
-			update_option( self::n( 'use_css' ), $this->get_checkbox( 'use_css' ) );
-			update_option( self::n( 'use_wrapper' ), $this->get_checkbox( 'use_wrapper' ) );
+			update_option( self::n( 'use_css' ), $this->get_checkbox( self::n('use_css') ) );
+			update_option( self::n( 'use_wrapper' ), $this->get_checkbox( self::n('use_wrapper') ) );
 
 			// 画面に更新されたことを伝えるメッセージを表示
 			echo '<div class="updated"><p><strong>' . __( 'Settings saved', self::PREFIX ) . '</strong></p></div>';
