@@ -195,18 +195,18 @@ class PostsDateAlert
 	 */
 	public function plugin_page() {
 		// 生成した一時トークンの取得
-		$nonce_field = isset( $_POST[ self::n( 'option_nonce' ) ] ) ? $_POST[ self::n( 'option_nonce' ) ] : null;
+		$nonce_field = $this->get_input_post( self::n( 'option_nonce' ) );
 
 		// 生成した一時トークンをチェックする
 		if ( wp_verify_nonce( $nonce_field, wp_create_nonce( __FILE__ ) ) ) {
 			// データベースに値を設定する
-			update_option( self::n( 'date' ), $_POST[ self::n( 'date' ) ] );
-			update_option( self::n( 'alert' ), wp_unslash( $_POST[ self::n( 'alert' ) ] ) );
-			update_option( self::n( 'use_type' ), $_POST[ self::n( 'use_type' ) ] );
-			update_option( self::n( 'comparison' ), $_POST[ self::n( 'comparison' ) ] );
-			update_option( self::n( 'alert_position' ), $_POST[ self::n( 'alert_position' ) ] );
-			update_option( self::n( 'use_css' ), $this->get_checkbox( self::n( 'use_css' ) ) );
-			update_option( self::n( 'use_wrapper' ), $this->get_checkbox( self::n( 'use_wrapper' ) ) );
+			update_option( self::n( 'date' ), $this->get_input_post( self::n( 'date' ) ) );
+			update_option( self::n( 'alert' ), wp_unslash( $this->get_input_post( self::n( 'alert' ) ) ) );
+			update_option( self::n( 'use_type' ), $this->get_input_post( self::n( 'use_type' ) ) );
+			update_option( self::n( 'comparison' ), $this->get_input_post( self::n( 'comparison' ) ) );
+			update_option( self::n( 'alert_position' ), $this->get_input_post( self::n( 'alert_position' ) ) );
+			update_option( self::n( 'use_css' ), $this->get_input_post( self::n( 'use_css' ) ) );
+			update_option( self::n( 'use_wrapper' ), $this->get_input_post( self::n( 'use_wrapper' ) ) );
 
 			// 画面に更新されたことを伝えるメッセージを表示
 			echo '<div class="updated"><p><strong>' . __( 'Settings saved', self::PREFIX ) . '</strong></p></div>';
@@ -219,7 +219,7 @@ class PostsDateAlert
 	/**
 	 * チェックボックスの値を取得する
 	 */
-	private function get_checkbox( $name )
+	private function get_input_post( $name )
 	{
 		$value = isset( $_POST[ $name ] ) ? $_POST[ $name ] : null;
 		return $value;
@@ -264,7 +264,7 @@ class PostsDateAlert
 	 */
 	public function save_postmeta( $post_id ) {
 		// 生成した一時トークンの取得
-		$nonce_field = isset( $_POST[ self::n( 'meta_nonce' ) ] ) ? $_POST[ self::n( 'meta_nonce' ) ] : null;
+		$nonce_field = $this->get_input_post( self::n( 'meta_nonce' ) );
 
 		// 生成した一時トークンをチェックする
 		if ( !wp_verify_nonce( $nonce_field, plugin_basename( __FILE__ ) ) ) {
@@ -282,7 +282,7 @@ class PostsDateAlert
 		}
 
 		// 入力値を取得
-		$is_display_alert = $_POST[ self::n( 'is_display_alert' ) ];
+		$is_display_alert = $this->get_input_post( self::n( 'is_display_alert' ) );
 
 		// チェックを入れずに投稿を保存した場合は、0を保存する
 		if( '1' !== $is_display_alert )
