@@ -217,7 +217,7 @@ class PostsDateAlert
 	}
 
 	/**
-	 * チェックボックスの値を取得する
+	 * POST値を取得する
 	 */
 	private function get_input_post( $name )
 	{
