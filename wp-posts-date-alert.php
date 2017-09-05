@@ -4,7 +4,7 @@ Plugin Name: WP Posts Date Alert
 Plugin URI: http://webcake.no003.info/
 Description: 投稿の公開日時または最終更新日時と現在の日付を比較してメッセージを表示するプラグインです。
 Author: Tsuyoshi.
-Version: 2.3.0
+Version: 2.4.0
 Author URI: http://webcake.no003.info/
 License: GPL
 Copyright: Tsuyoshi.
@@ -42,7 +42,7 @@ class PostsDateAlert
 		add_filter( 'the_content', array( $this, 'hook_the_content_filter' ), 9999 );
 
 		// プラグイン付属のCSSを使うにチェックが入っていた場合、CSSを読み込む
-		if( get_option( self::n( 'use_css' ) ) == 1 ) {
+		if( 1 == get_option( self::n( 'use_css' ) ) ) {
 			add_action( 'wp_enqueue_scripts', array( $this, 'hook_wp_enqueue_scripts_action' ) );
 		}
 	}
@@ -66,7 +66,7 @@ class PostsDateAlert
 	 */
 	public function hook_the_content_filter( $content ) {
 		// 警告文を表示するかどうか
-		if ( $this->is_disp() === true ) {
+		if ( true === $this->is_disp() ) {
 			// 投稿の本文にメッセージを付与して返す
 			$content =  $this->get_content( $content );
 		}
