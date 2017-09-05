@@ -14,8 +14,9 @@ function wppda_delete_plugin() {
 	delete_option( PostsDateAlert::n( 'date' ) );
 	delete_option( PostsDateAlert::n( 'alert' ) );
 	delete_option( PostsDateAlert::n( 'use_type' ) );
-	delete_option( PostsDateAlert::n( 'use_css' ) );
+	delete_option( PostsDateAlert::n( 'comparison' ) );
 	delete_option( PostsDateAlert::n( 'alert_position' ) );
+	delete_option( PostsDateAlert::n( 'use_css' ) );
 	delete_option( PostsDateAlert::n( 'use_wrapper' ) );
 }
 
