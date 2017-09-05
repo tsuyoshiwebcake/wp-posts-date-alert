@@ -216,6 +216,9 @@ class PostsDateAlert
 		$this->the_form();
 	}
 
+	/**
+	 * チェックボックスの値を取得する
+	 */
 	private function get_checkbox($name)
 	{
 		$value = isset( $_POST[ $name ] ) ? $_POST[ $name ] : null;
