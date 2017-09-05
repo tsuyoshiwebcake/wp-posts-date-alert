@@ -1,5 +1,5 @@
 # WP Posts Date Alert
-WP Posts Date Alertは投稿の公開日時と現在の日時を比較して指定した期間より古い投稿の場合、メッセージを表示するWordPressプラグインです。
+WP Posts Date Alertは投稿の公開日時または最終更新日時と現在の日時を比較して指定した期間より古い投稿の場合、メッセージを表示するWordPressプラグインです。
 
 ## License
 GPL License
