@@ -21,7 +21,7 @@ class PostsDateAlert
 	const PREFIX = 'wppda';
 
 	/**
-	 *	コンストラクタ
+	 * コンストラクタ
 	 */
 	public function __construct() {
 		// 管理者ページでのみ実行
@@ -48,7 +48,7 @@ class PostsDateAlert
 	}
 
 	/**
-	 *	CSSを読み込む
+	 * CSSを読み込む
 	 */
 	public function hook_wp_enqueue_scripts_action() {
 		wp_enqueue_style( self::n( 'style' ), plugins_url( 'style.css', __FILE__ )  );
@@ -95,7 +95,7 @@ class PostsDateAlert
 	}
 
 	/**
-	 *	日付のチェック
+	 * 日付のチェック
 	 */
 	public static function check_date() {
 		$type = get_option( self::n( 'use_type' ), -1 );
@@ -134,7 +134,7 @@ class PostsDateAlert
 	}
 
 	/**
-	 *	警告文を返す
+	 * 警告文を返す
 	 */
 	public function get_content( $content = null ) {
 		$position = get_option( self::n( 'alert_position' ), -1 );
@@ -165,14 +165,14 @@ class PostsDateAlert
 	}
 
 	/**
-	 *	接頭辞を付けて名称を返す
+	 * 接頭辞を付けて名称を返す
 	 */
 	public static function n( $name ) {
 		return self::PREFIX . '_' . $name;
 	}
 
 	/**
-	 *	プラグインメニュー
+	 * プラグインメニュー
 	 */
 	public function plugin_menu() {
 		// メニューの設定にサブメニューとして追加
@@ -191,7 +191,7 @@ class PostsDateAlert
 	}
 
 	/**
-	 *	プラグインページ
+	 * プラグインページ
 	 */
 	public function plugin_page() {
 		// 生成した一時トークンの取得
@@ -226,7 +226,7 @@ class PostsDateAlert
 	}
 
 	/**
-	 *	投稿画面に独自メタボックスを定義
+	 * 投稿画面に独自メタボックスを定義
 	 */
 	public function add_custom_box() {
 		if( function_exists( 'add_meta_box' )) {
@@ -236,7 +236,7 @@ class PostsDateAlert
 	}
 
 	/**
-	 *	独自メタボックスの入力フィールドを定義
+	 * 独自メタボックスの入力フィールドを定義
 	 */
 	public function inner_custom_box( $post ) {
 
@@ -260,7 +260,7 @@ class PostsDateAlert
 	}
 
 	/**
-	 *	独自メタボックスの入力値を保存
+	 * 独自メタボックスの入力値を保存
 	 */
 	public function save_postmeta( $post_id ) {
 		// 生成した一時トークンの取得
@@ -298,7 +298,7 @@ class PostsDateAlert
 	}
 
 	/**
-	 *	フォームの表示
+	 * フォームの表示
 	 */
 	private function the_form() {
 	?>
@@ -381,8 +381,8 @@ class PostsDateAlert
 $PostsDateAlert = new PostsDateAlert();
 
 /**
- *	テンプレートタグ
- *	メッセージを出力
+ * テンプレートタグ
+ * メッセージを出力
  */
 function wppda_alert() {
 	if ( true == PostsDateAlert::is_disp() ) {
