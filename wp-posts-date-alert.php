@@ -32,7 +32,7 @@ class PostsDateAlert
 			add_action('admin_menu', array( $this, 'add_custom_box' ) );
 
 			// 独自メタボックスの入力値を保存
-			add_action('save_post', array( $this, 'save_postmeta' ));
+			add_action('save_post', array( $this, 'save_postmeta' ) );
 
 			// 翻訳ファイルの読み込み
 			add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
@@ -155,7 +155,7 @@ class PostsDateAlert
 		}
 
 		// 投稿の本文が null で、自動出力せずテンプレートタグを使用する場合
-		if( true === is_null($content) && 2 == $position )
+		if( true === is_null( $content ) && 2 == $position )
 		{
 			// 警告文のみ返す
 			$content = $alert;
@@ -169,6 +169,15 @@ class PostsDateAlert
 	 */
 	public static function n( $name ) {
 		return self::PREFIX . '_' . $name;
+	}
+
+	/**
+	 * POST値を取得する
+	 */
+	private function get_input_post( $name )
+	{
+		$value = isset( $_POST[ $name ] ) ? $_POST[ $name ] : null;
+		return $value;
 	}
 
 	/**
@@ -214,15 +223,6 @@ class PostsDateAlert
 
 		// フォームの表示
 		$this->the_form();
-	}
-
-	/**
-	 * POST値を取得する
-	 */
-	private function get_input_post( $name )
-	{
-		$value = isset( $_POST[ $name ] ) ? $_POST[ $name ] : null;
-		return $value;
 	}
 
 	/**
